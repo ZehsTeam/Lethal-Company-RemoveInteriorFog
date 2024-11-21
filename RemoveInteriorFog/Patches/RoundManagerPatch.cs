@@ -10,6 +10,7 @@ internal static class RoundManagerPatch
 {
     [HarmonyPatch(nameof(RoundManager.RefreshEnemiesList))]
     [HarmonyPostfix]
+    [HarmonyPriority(Priority.Last)]
     private static void RefreshEnemiesListPatch()
     {
         if (!Plugin.ConfigManager.DisableVanillaInteriorFog.Value)
@@ -17,7 +18,7 @@ internal static class RoundManagerPatch
             return;
         }
 
-        DisableLocalVolumetricFog(RoundManager.Instance.indoorFog, "Vanilla interior fog has been disabled.");
+        RemoveVanillaInteriorFog();
     }
 
     [HarmonyPatch(nameof(RoundManager.FinishGeneratingLevel))]
@@ -29,6 +30,26 @@ internal static class RoundManagerPatch
             return;
         }
 
+        RemoveOtherInteriorFog();
+    }
+
+    public static void RemoveVanillaInteriorFog()
+    {
+        if (RoundManager.Instance == null)
+        {
+            return;
+        }
+
+        if (RoundManager.Instance.indoorFog == null)
+        {
+            return;
+        }
+
+        DisableLocalVolumetricFog(RoundManager.Instance.indoorFog, "Vanilla interior fog has been disabled.");
+    }
+
+    public static void RemoveOtherInteriorFog()
+    {
         DisableFogOnDungeonTiles();
         DisableFogBelowMoonSurface();
     }
@@ -46,6 +67,11 @@ internal static class RoundManagerPatch
 
     private static void DisableFogBelowMoonSurface()
     {
+        if (RoundManager.Instance == null)
+        {
+            return;
+        }
+
         if (RoundManager.Instance.dungeonGenerator == null)
         {
             return;

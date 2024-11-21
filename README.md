@@ -14,4 +14,4 @@ https://github.com/ZehsTeam/Lethal-Company-RemoveInteriorFog/issues
 | [Lethal Company modding Discord](https://discord.gg/XeyYqRdRGC) | `#mod-releases` | [RemoveInteriorFog](https://discord.com/channels/1168655651455639582/1302674320480407612) |
 | [Unofficial Lethal Company Community](https://discord.gg/nYcQFEpXfU) | `#mod-releases` | [RemoveInteriorFog](https://discord.com/channels/1169792572382773318/1302674538408186009) |
 
-#### Twitch: [CritHaxXoG](https://www.twitch.tv/crithaxxog) - YouTube: [Zehs](https://www.youtube.com/channel/UCb4VEkc-_im0h8DKXlwmIAA)
+#### Email: crithaxxog@gmail.com - Twitch: [CritHaxXoG](https://www.twitch.tv/crithaxxog) - YouTube: [Zehs](https://www.youtube.com/channel/UCb4VEkc-_im0h8DKXlwmIAA)
